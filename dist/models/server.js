@@ -10,10 +10,10 @@ const repositories_1 = __importDefault(require("../routes/repositories"));
 class Server {
     constructor() {
         this.apiPaths = {
-            repositori: '/api/repositories',
+            repositori: "/api/repositories",
         };
         this.app = (0, express_1.default)();
-        this.port = process.env.PORT || '8002';
+        this.port = "3004";
         this.milddlewares();
         this.routes();
     }
@@ -22,7 +22,7 @@ class Server {
         this.app.use((0, cors_1.default)());
         this.app.use(express_1.default.json());
         this.app.use(error_handler_1.default);
-        this.app.use(express_1.default.static('public'));
+        this.app.use(express_1.default.static("public"));
     }
     routes() {
         this.app.use(this.apiPaths.repositori, repositories_1.default);
