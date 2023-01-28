@@ -10,10 +10,10 @@ const repositories_1 = __importDefault(require("../routes/repositories"));
 class Server {
     constructor() {
         this.apiPaths = {
-            repositori: "/api/repositories",
+            repositori: "/api/status",
         };
         this.app = (0, express_1.default)();
-        this.port = "3004";
+        this.port = process.env.PORT || "8000";
         this.milddlewares();
         this.routes();
     }
@@ -29,7 +29,7 @@ class Server {
     }
     listen() {
         this.app.listen(this.port, () => {
-            console.log(`Server running on port ${this.port}`);
+            console.log("Server running on port", this.port);
         });
     }
 }

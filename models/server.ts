@@ -9,12 +9,12 @@ class Server {
   private port: string;
 
   private apiPaths = {
-    repositori: "/api/repositories",
+    repositori: "/api/status",
   };
 
   constructor() {
     this.app = express();
-    this.port = "3001";
+    this.port = process.env.PORT || "8000";
     this.milddlewares();
     this.routes();
   }
